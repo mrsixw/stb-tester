@@ -24,6 +24,11 @@ UNRELEASED
 
 ##### New features
 
+* Python API: `stbt.ocr` and `stbt.match_text` have a new parameter
+  `text_color`. Specifying this can improve OCR results when tesseract's
+  default thresholding algorithm doesn't detect the text, for example for white
+  text on a light-colored background.
+
 ##### Minor fixes and packaging fixes
 
 * Python API: `stbt.match_text` can take single-channel images (black-and-white

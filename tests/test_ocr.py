@@ -199,3 +199,10 @@ def test_that_match_text_gives_tesseract_a_hint():
 def test_match_text_on_single_channel_image():
     frame = cv2.imread("tests/ocr/menu.png", cv2.IMREAD_GRAYSCALE)
     assert stbt.match_text("Onion Bhaji", frame)
+
+
+def test_ocr_white_on_blue():
+    frame = cv2.imread("tests/action-panel.png")
+    color = (235, 235, 235)
+    assert "Summary" in stbt.ocr(frame, text_color=color)
+    assert stbt.match_text("Summary", frame, text_color=color)
