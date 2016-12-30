@@ -63,6 +63,10 @@ Added HDMI CEC control; various API improvements.
   `right_of` and `left_of`. They return a new Region relative to the current
   region.
 
+* Python API: `stbt.wait_until` has a new parameter `consecutive_secs` to wait
+  for the return value to stabilise (for example to wait for the position of a
+  `MatchResult` to stabilise).
+
 * New remote-control type "hdmi-cec". With the help of a USB-CEC adapter such
   as <https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter> this allows
   stb-tester to send keypresses over HDMI, to control devices that don't have

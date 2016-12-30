@@ -1,3 +1,4 @@
+import random
 import time
 
 import stbt
@@ -32,3 +33,10 @@ def test_that_wait_until_tries_one_last_time():
 
 def test_that_wait_until_with_zero_timeout_tries_once():
     assert stbt.wait_until(lambda: True, timeout_secs=0)
+
+
+def test_wait_until_consecutive_secs():
+    random.seed(1)
+    assert stbt.wait_until(random.random, timeout_secs=0.1)
+    assert not stbt.wait_until(
+        random.random, timeout_secs=0.1, consecutive_secs=0.01)
